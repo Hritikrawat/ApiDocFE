@@ -557,16 +557,16 @@ function App() {
       }
     };
 
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (
-        e.key === 'F12' ||
-        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
-        (e.ctrlKey && e.key === 'U')
-      ) {
-        e.preventDefault();
-        setShowMeme(true);
-      }
-    };
+    // const handleKeyDown = (e: KeyboardEvent) => {
+    //   if (
+    //     e.key === 'F12' ||
+    //     (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+    //     (e.ctrlKey && e.key === 'U')
+    //   ) {
+    //     e.preventDefault();
+    //     setShowMeme(true);
+    //   }
+    // };
 
     const handleContextMenu = (e: MouseEvent) => {
       e.preventDefault();
