@@ -574,14 +574,14 @@ function App() {
     };
 
     window.addEventListener('resize', detectDevTools);
-    window.addEventListener('keydown', handleKeyDown);
+    // window.addEventListener('keydown', handleKeyDown);
     document.addEventListener('contextmenu', handleContextMenu);
 
     const interval = setInterval(detectDevTools, 1000);
 
     return () => {
       window.removeEventListener('resize', detectDevTools);
-      window.removeEventListener('keydown', handleKeyDown);
+      // window.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('contextmenu', handleContextMenu);
       clearInterval(interval);
     };
