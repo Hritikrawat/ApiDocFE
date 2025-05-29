@@ -537,7 +537,7 @@ import EndpointList from './components/EndpointList';
 import EndpointForm from './components/EndpointForm';
 import { ApiEndpoint } from './types';
 import { generateWordDocumentation, generatePdfDocumentation } from './services/apiService';
-import inspectMeme from './components/images/inspectMeme.png';
+// import inspectMeme from './components/images/inspectMeme.png';
 
 function App() {
   const [endpoints, setEndpoints] = useState<ApiEndpoint[]>([]);
@@ -546,46 +546,46 @@ function App() {
   const [isGeneratingWord, setIsGeneratingWord] = useState(false);
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [showMeme, setShowMeme] = useState(false);
+  // const [showMeme, setShowMeme] = useState(false);
 
-  useEffect(() => {
-    const detectDevTools = () => {
-      const widthThreshold = window.outerWidth - window.innerWidth > 160;
-      const heightThreshold = window.outerHeight - window.innerHeight > 160;
-      if (widthThreshold || heightThreshold) {
-        setShowMeme(true);
-      }
-    };
-
-    // const handleKeyDown = (e: KeyboardEvent) => {
-    //   if (
-    //     e.key === 'F12' ||
-    //     (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
-    //     (e.ctrlKey && e.key === 'U')
-    //   ) {
-    //     e.preventDefault();
+  // useEffect(() => {
+    // const detectDevTools = () => {
+    //   const widthThreshold = window.outerWidth - window.innerWidth > 160;
+    //   const heightThreshold = window.outerHeight - window.innerHeight > 160;
+    //   if (widthThreshold || heightThreshold) {
     //     setShowMeme(true);
     //   }
-    // };
+  //   };
 
-    const handleContextMenu = (e: MouseEvent) => {
-      e.preventDefault();
-      setShowMeme(true);
-    };
+  //   // const handleKeyDown = (e: KeyboardEvent) => {
+  //   //   if (
+  //   //     e.key === 'F12' ||
+  //   //     (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+  //   //     (e.ctrlKey && e.key === 'U')
+  //   //   ) {
+  //   //     e.preventDefault();
+  //   //     setShowMeme(true);
+  //   //   }
+  //   // };
 
-    window.addEventListener('resize', detectDevTools);
-    // window.addEventListener('keydown', handleKeyDown);
-    document.addEventListener('contextmenu', handleContextMenu);
+  //   const handleContextMenu = (e: MouseEvent) => {
+  //     e.preventDefault();
+  //     setShowMeme(true);
+  //   };
 
-    const interval = setInterval(detectDevTools, 1000);
+  //   window.addEventListener('resize', detectDevTools);
+  //   // window.addEventListener('keydown', handleKeyDown);
+  //   document.addEventListener('contextmenu', handleContextMenu);
 
-    return () => {
-      window.removeEventListener('resize', detectDevTools);
-      // window.removeEventListener('keydown', handleKeyDown);
-      document.removeEventListener('contextmenu', handleContextMenu);
-      clearInterval(interval);
-    };
-  }, []);
+  //   const interval = setInterval(detectDevTools, 1000);
+
+  //   return () => {
+  //     window.removeEventListener('resize', detectDevTools);
+  //     // window.removeEventListener('keydown', handleKeyDown);
+  //     document.removeEventListener('contextmenu', handleContextMenu);
+  //     clearInterval(interval);
+  //   };
+  // }, []);
 
   const handleAddEndpoint = () => {
     setCurrentEndpoint(undefined);
@@ -663,35 +663,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white relative">
-      {showMeme && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4"
-          role="dialog"
-          aria-labelledby="meme-title"
-          onKeyDown={(e) => e.key === 'Escape' && setShowMeme(false)}
-          tabIndex={-1}
-        >
-          <div className="bg-white rounded-lg p-6 max-w-md w-full text-center">
-            <div className="flex justify-center mb-4">
-              <AlertTriangle size={64} className="text-yellow-500" />
-            </div>
-            <h2 id="meme-title" className="text-2xl font-bold mb-4">You Very Chalak Bro</h2>
-            <img
-              src={inspectMeme}
-              alt="Meme: Inspector caught in the act"
-              className="w-full h-auto rounded-lg mb-4"
-            />
-            <p className="text-gray-700 mb-4">Nice try! But we don't allow inspect element here.</p>
-            <button
-              onClick={() => setShowMeme(false)}
-              className="bg-red-600 hover:bg-red-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
-            >
-              I Promise Not To Do It Again
-            </button>
-          </div>
-        </div>
-      )}
-
+    
       <Header />
 
       <main className="container mx-auto px-4 py-8">
