@@ -17,7 +17,7 @@
   import axios from 'axios';
 import { ApiEndpoint } from '../types';
 
-const API_URL = 'http://localhost:1234/doc/download';
+const API_URL = 'https:/apidocbe-production.up.railway.app/doc/download';
 
 interface DocumentationRequest {
   endpoints: ApiEndpoint[];
