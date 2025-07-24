@@ -36,9 +36,10 @@ const HeaderForm: React.FC<HeaderFormProps> = ({ headers, onChange }) => {
         <button
           type="button"
           onClick={addHeader}
-          className="flex items-center text-sm text-indigo-600 hover:text-indigo-800"
+          // Increased padding (px-3 py-2) and icon size (size={20})
+          className="flex items-center text-base text-indigo-600 hover:text-indigo-800 px-3 py-2 rounded-md" 
         >
-          <Plus size={16} className="mr-1" />
+          <Plus size={20} className="mr-1" /> {/* Increased Plus icon size */}
           Add Header
         </button>
       </div>
@@ -66,9 +67,10 @@ const HeaderForm: React.FC<HeaderFormProps> = ({ headers, onChange }) => {
               <button
                 type="button"
                 onClick={() => removeHeader(header.id)}
-                className="p-2 text-red-500 hover:text-red-700 focus:outline-none"
+                // Increased padding (p-3) and icon size (size={22})
+                className="p-3 text-red-500 hover:text-red-700 focus:outline-none rounded-md"
               >
-                <Trash2 size={18} />
+                <Trash2 size={22} /> {/* Increased Trash2 icon size */}
               </button>
             </div>
           ))}
