@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 
         <div className="flex items-center justify-center w-40">
           <img 
-            src="src\components\images\saltoris.jpg" 
+            src="src\components\images\Saltoris.jpg" 
             alt="Coding workspace" 
             // className="w-40 h-40 object-cover rounded-md shadow-sm"
           />
