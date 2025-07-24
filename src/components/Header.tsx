@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileText, Code } from 'lucide-react';
+import Saltoris from './images/Saltoris.jpg'
 
 const Header: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const Header: React.FC = () => {
 
         <div className="flex items-center justify-center w-40">
           <img 
-            src="src\components\images\Saltoris.jpg" 
+            src={Saltoris}
             alt="Coding workspace" 
             // className="w-40 h-40 object-cover rounded-md shadow-sm"
           />
